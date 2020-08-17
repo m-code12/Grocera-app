@@ -16,7 +16,7 @@ rootRef.on("child_added", snap => {
 	var status = snap.child("status").val();
 
 	
-	$("#table_body").append("<tr><td>" + name + "</td><td>" + email + "</td><td>" + number + "</td><td>" + address + "</td><td>" + code +
-		"</td><td>" + fee + "</td><td>" + dis + "</td><td>" + rating + "</td><td>" + status + "</td></tr>")
+	$("#table_body").append("<tr><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + email + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + address + "</td><td contenteditable='true'>" + code +
+		"</td><td contenteditable='true'>" + fee + "</td><td contenteditable='true'>" + dis + "</td><td contenteditable='true'>" + rating + "</td><td contenteditable='true'>" + status + "</td><td><button>Remove</button></td></tr>")
 	
 });
