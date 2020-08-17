@@ -11,6 +11,6 @@ rootRef.on("child_added", snap => {
 	var number = snap.child("phone").val();
 	var code = snap.child("pinCode").val();
 	
-	$("#table_body").append("<tr><td>" + id + "</td><td>" + name + "</td><td>" + number + "</td><td>" + code + "</td><td>" + token + "</td></tr>")
+	$("#table_body").append("<tr><td contenteditable='true'>" + id + "</td><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + code + "</td><td contenteditable='true'>" + token + "</td><td><button>Remove</td></tr>")
 	
 });
