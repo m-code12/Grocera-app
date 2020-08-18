@@ -12,7 +12,7 @@ rootRef.on("child_added", snap => {
 	var code = snap.child("pinCode").val();
 	
 	//$("#table_body").append("<tr><td contenteditable='true'>" + id + "</td><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + code + "</td><td contenteditable='true'>" + token + "</td><td><button onclick='deleteRow(this)'>Remove</button></td></tr>")
-	$('#table_body').append('<tr><td contenteditable="true">' + id + '</td><td contenteditable="true">' + name + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + token + '</td><td><button onclick="deleteRow(this)">Remove</button></td></tr>')
+	$('#table_body').append('<tr><td contenteditable="true">' + id + '</td><td contenteditable="true">' + name + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + token + '</td><td><button class="btn btn-outline-danger" onclick="deleteRow(this)"><b>Remove</b></button></td></tr>')
 });
 
 /*$(document).ready(function(){
