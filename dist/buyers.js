@@ -14,3 +14,8 @@ rootRef.on("child_added", snap => {
 	$("#table_body").append("<tr><td contenteditable='true'>" + id + "</td><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + code + "</td><td contenteditable='true'>" + token + "</td><td><button>Remove</td></tr>")
 	
 });
+
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("dataTable").deleteRow(i);
+}
