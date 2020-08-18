@@ -16,8 +16,10 @@ rootRef.on("child_added", snap => {
 	var status = snap.child("status").val();
 
 	
-	$("#table_body").append("<tr><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + email + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + address + "</td><td contenteditable='true'>" + code +
-		"</td><td contenteditable='true'>" + fee + "</td><td contenteditable='true'>" + dis + "</td><td contenteditable='true'>" + rating + "</td><td contenteditable='true'>" + status + "</td><td><button>Remove</td></tr>")
+	//$("#table_body").append("<tr><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + email + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + address + "</td><td contenteditable='true'>" + code +
+	//	"</td><td contenteditable='true'>" + fee + "</td><td contenteditable='true'>" + dis + "</td><td contenteditable='true'>" + rating + "</td><td contenteditable='true'>" + status + "</td><td><button>Remove</td></tr>")
+	
+	$('#table_body').append('<tr><td contenteditable="true">' + name + '</td><td contenteditable="true">' + email + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + address + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + fee + '</td><td contenteditable="true">' + dis + '</td><td contenteditable="true">' + rating + '</td><td contenteditable="true">' + status + '</td><td><button class="btn btn-outline-danger" onclick="deleteRow(this)"><b>Remove</b></button></td></tr>')
 	
 });
 
