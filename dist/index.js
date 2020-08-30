@@ -19,11 +19,20 @@ rootRef.on("child_added", snap => {
 	//$("#table_body").append("<tr><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + email + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + address + "</td><td contenteditable='true'>" + code +
 	//	"</td><td contenteditable='true'>" + fee + "</td><td contenteditable='true'>" + dis + "</td><td contenteditable='true'>" + rating + "</td><td contenteditable='true'>" + status + "</td><td><button>Remove</td></tr>")
 	
-	$('#table_body').append('<tr><td contenteditable="true">' + name + '</td><td contenteditable="true">' + email + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + address + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + fee + '</td><td contenteditable="true">' + dis + '</td><td contenteditable="true">' + rating + '</td><td contenteditable="true">' + status + '</td><td><button class="btn btn-outline-danger" onclick="deleteRow(this)"><b>Remove</b></button></td></tr>')
+	$('#table_body').append('<tr><td contenteditable="true">' + name + '</td><td contenteditable="true">' + email + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + address + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + fee + '</td><td contenteditable="true">' + dis + '</td><td contenteditable="true">' + rating + '</td><td contenteditable="true">' + status + '</td><td><button class="btn btn-outline-danger" onclick=products("' + snap.key + '")><b>products</b></button></td></tr>')
 	
 });
 
-function deleteRow(r) {
-    var i = r.parentNode.parentNode.rowIndex;
-    document.getElementById("dataTable").deleteRow(i);
+function products(key){
+	var rootRef = firebase.database().ref().child("productDetails");
+
+	rootRef.on("child_added", snap => {
+		var shopId = snap.child("shopId").val();
+		var name = snap.child("name").val();
+		
+	if(shopId==key){
+console.log(name);
+	}
+
+	});
 }
