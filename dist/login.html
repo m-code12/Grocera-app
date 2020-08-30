@@ -14,10 +14,10 @@
   <!-- Custom fonts for this template-->
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
 
   
  
@@ -102,14 +102,13 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyAD8Wxj_iP80VY4cRRlJ7EbrKin1IZ5yoE",
-    authDomain: "test-app-e2b09.firebaseapp.com",
-    databaseURL: "https://test-app-e2b09.firebaseio.com",
-    projectId: "test-app-e2b09",
-    storageBucket: "test-app-e2b09.appspot.com",
-    messagingSenderId: "696243432348",
-    appId: "1:696243432348:web:24dc81f147820cfbe53659",
-    measurementId: "G-YSB4BZ5DJE"
+    apiKey: "AIzaSyDMkENRSNWFdC66_4BwIFtmfTXm0aPJ_2s",
+    authDomain: "banking-c308d.firebaseapp.com",
+    databaseURL: "https://banking-c308d.firebaseio.com",
+    projectId: "banking-c308d",
+    storageBucket: "banking-c308d.appspot.com",
+    messagingSenderId: "521866703896",
+    appId: "1:521866703896:web:297b96b40de8b4bb57bf6d"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -120,7 +119,7 @@
       {
        window.location.href="./index.html";
       }
-      
+      else alert("please login")
     });
 
   $("#btn-login").click(function()
