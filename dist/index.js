@@ -63,14 +63,14 @@ function editbuyer(key) {
 	$("#save-btn").click(function() {
         var name1 = document.getElementById("name1").value;
         
-	
+		var email1 = document.getElementById("email1").value;
 		var phone1 = document.getElementById("phone1").value;
 
      firebase.database().ref('shopDetails/' + key).update({
            name: name1,
-           
+           email:email1,
 		
-		   phone:phone1
+		   phoneNumber:phone1
 		});
 	
         window.alert("Your Changes have been done! \n Refresh the page to see the changes");
