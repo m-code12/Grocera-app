@@ -11,8 +11,13 @@ rootRef.on("child_added", snap => {
 	var phone = snap.child("phone").val();
 	var code = snap.child("pinCode").val();
 	
+<<<<<<< HEAD
 	//$("#table_body").append("<tr><td contenteditable='true'>" + id + "</td><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + phone + "</td><td contenteditable='true'>" + code + "</td><td contenteditable='true'>" + token + "</td><td><button onclick='deleteRow(this)'>Remove</button></td></tr>")
 	$('#table_body').append('<tr><td contenteditable="true" >' + id + '</td><td contenteditable="true" id="name">' + name + '</td><td contenteditable="true" id="phone">' + phone + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true" id="token">' + token + '</td><td><button onclick=deletebuyer("' + snap.key + '") class="btn btn-outline-danger" ><b>Remove</b></button></td><td><button onclick=editbuyer("' + snap.key + '") class="btn btn-outline-danger" ><b>edit</b></button></td></tr>')
+=======
+	//$("#table_body").append("<tr><td contenteditable='true'>" + id + "</td><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + code + "</td><td contenteditable='true'>" + token + "</td><td><button onclick='deleteRow(this)'>Remove</button></td></tr>")
+	$('#table_body').append('<tr><td contenteditable="true">' + id + '</td><td contenteditable="true">' + name + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + token + '</td><td><button class="btn btn-outline-success"><b>See Details</b></button></td><td><button onclick=deletebuyer("' + snap.key + '") class="btn btn-outline-danger" ><b>Remove</b></button></td></tr>')
+>>>>>>> 2bf312efc9f24675de59b0a970ead6574fd2a842
 });
 
 /*$(document).ready(function(){
