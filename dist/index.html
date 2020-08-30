@@ -10,6 +10,10 @@
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -32,7 +36,7 @@
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="btn btn-primary" id="btn-logout">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -678,6 +682,21 @@
                 </footer>
             </div>
         </div>
+        <script>
+            var firebaseConfig = {
+    apiKey: "AIzaSyAD8Wxj_iP80VY4cRRlJ7EbrKin1IZ5yoE",
+    authDomain: "test-app-e2b09.firebaseapp.com",
+    databaseURL: "https://test-app-e2b09.firebaseio.com",
+    projectId: "test-app-e2b09",
+    storageBucket: "test-app-e2b09.appspot.com",
+    messagingSenderId: "696243432348",
+    appId: "1:696243432348:web:24dc81f147820cfbe53659",
+    measurementId: "G-YSB4BZ5DJE"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+        </script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>

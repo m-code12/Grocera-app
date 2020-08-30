@@ -20,3 +20,8 @@
         $("body").toggleClass("sb-sidenav-toggled");
     });
 })(jQuery);
+
+$("#btn-logout").click(function() {
+    firebase.auth().signOut();
+  alert('logged out')
+});
