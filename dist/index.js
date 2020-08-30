@@ -8,7 +8,7 @@ rootRef.on("child_added", snap => {
 	console.log(snap.val());
 	var email = snap.child("email").val();
 	var address = snap.child("address").val();
-	var number = snap.child("phoneNumber").val();
+	var phone = snap.child("phoneNumber").val();
 	var dis = snap.child("discount").val();
 	var fee = snap.child("deliveryFee").val();
 	var code = snap.child("pinCode").val();
@@ -19,9 +19,66 @@ rootRef.on("child_added", snap => {
 	//$("#table_body").append("<tr><td contenteditable='true'>" + name + "</td><td contenteditable='true'>" + email + "</td><td contenteditable='true'>" + number + "</td><td contenteditable='true'>" + address + "</td><td contenteditable='true'>" + code +
 	//	"</td><td contenteditable='true'>" + fee + "</td><td contenteditable='true'>" + dis + "</td><td contenteditable='true'>" + rating + "</td><td contenteditable='true'>" + status + "</td><td><button>Remove</td></tr>")
 	
-	$('#table_body').append('<tr><td contenteditable="true">' + name + '</td><td contenteditable="true">' + email + '</td><td contenteditable="true">' + number + '</td><td contenteditable="true">' + address + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + fee + '</td><td contenteditable="true">' + dis + '</td><td contenteditable="true">' + rating + '</td><td contenteditable="true">' + status + '</td><td><button class="btn btn-outline-danger" onclick=products("' + snap.key + '")><b>products</b></button></td></tr>')
+	$('#table_body').append('<tr><td contenteditable="true" id="name">' + name + '</td><td contenteditable="true">' + email + '</td><td contenteditable="true" id="phone">' + phone + '</td><td contenteditable="true">' + address + '</td><td contenteditable="true">' + code + '</td><td contenteditable="true">' + fee + '</td><td contenteditable="true">' + dis + '</td><td contenteditable="true">' + rating + '</td><td contenteditable="true">' + status + '</td><td><button class="btn btn-outline-warning" onclick=products("' + snap.key + '")><b>See Details</b></button></td><td><button onclick=deletebuyer("' + snap.key + '") class="btn btn-outline-danger" ><b>Remove</b></button></td><td><button onclick=editbuyer("' + snap.key + '") class="btn btn-outline-success" ><b>edit</b></button></td></tr>')
 	
 });
+
+
+function deletebuyer(key) {
+var deleteRef = firebase.database().ref().child("shopDetails").child(key);
+firebase.database().ref('shopDetails/' + key).on('value', snapshot => {
+	name = snapshot.val().name;
+	email = snapshot.val().email;
+phone = snapshot.val().phone;
+	data = {
+		name,
+	email,
+		phone
+	};
+	
+});
+
+return deleteRef.remove()
+	.then(function() {
+		window.alert("Deleted successfully\n Refresh The Page to see the changes");
+		window.location.reload();
+	})
+	.catch(function() {
+		console.log("error occured");
+	});
+
+}
+
+function editbuyer(key) {
+	$('#tryModal').modal('show');
+    $(window).on('shown.bs.modal', function() {
+        $('#tryModal').modal('show');
+        firebase.database().ref('shopDetails/' + key).on('value', function(snapshot) {
+            document.getElementById("name").value = snapshot.val().name;
+            document.getElementById("phone").value = snapshot.val().phone;
+            
+        })
+    });
+  
+	$("#save-btn").click(function() {
+        var name1 = document.getElementById("name1").value;
+        
+	
+		var phone1 = document.getElementById("phone1").value;
+
+     firebase.database().ref('shopDetails/' + key).update({
+           name: name1,
+           
+		
+		   phone:phone1
+		});
+	
+        window.alert("Your Changes have been done! \n Refresh the page to see the changes");
+        window.location.reload();
+
+	});
+}
+
 function close(){
 	$('#dataTable tbody').empty();
 }
