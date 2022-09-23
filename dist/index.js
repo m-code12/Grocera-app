@@ -56,7 +56,7 @@ function editbuyer(key) {
         $('#tryModal').modal('show');
         firebase.database().ref('shopDetails/' + key).on('value', function(snapshot) {
             document.getElementById("name1").value = snapshot.val().name;
-            document.getElementById("phone1").value = snapshot.val().phone;
+            document.getElementById("phone1").value = snapshot.val().phoneNumber;
             document.getElementById("email1").value = snapshot.val().email;
         })
     });
