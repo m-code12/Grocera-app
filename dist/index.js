@@ -54,9 +54,9 @@ function editbuyer(key) {
     $(window).on('shown.bs.modal', function() {
         $('#tryModal').modal('show');
         firebase.database().ref('shopDetails/' + key).on('value', function(snapshot) {
-            document.getElementById("name").value = snapshot.val().name;
-            document.getElementById("phone").value = snapshot.val().phone;
-            
+            document.getElementById("name1").value = snapshot.val().name;
+            document.getElementById("phone1").value = snapshot.val().phone;
+            document.getElementById("email1").value = snapshot.val().email;
         })
     });
   
